@@ -32,10 +32,8 @@ class Project extends Component {
     render() {
         if (this.state.isHovering) {
             this.currentlyShowing = this.secondImage;
-            console.log('hovering');
         } else {
             this.currentlyShowing = this.firstImage;
-            console.log('not hovering');
         }
 
         return (
