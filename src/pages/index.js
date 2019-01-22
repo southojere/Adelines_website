@@ -6,8 +6,6 @@ import Leftnav from '../components/leftnav'
 import Project from '../components/project'
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image'
-// images
-import typo from '../images/typo1.png';
 
 const IndexPage = ({ data }) => (
   <Layout>

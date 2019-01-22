@@ -38,7 +38,7 @@ class Project extends Component {
 
         return (
             <div>
-                <img src={this.currentlyShowing} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
+                <img  src={this.currentlyShowing} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
             </div>
         );
     }
