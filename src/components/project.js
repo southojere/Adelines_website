@@ -34,16 +34,16 @@ class Project extends Component {
         let showing = [];
         if (this.state.isHovering) {
             this.currentlyShowing = this.secondImage;
-            showing = <Img fluid={this.state.firstImage} />
+            showing = <Img fadeIn={false} fluid={this.state.firstImage} />
         } else {
             this.currentlyShowing = this.firstImage;
-            showing =  <Img fluid={this.state.secondImage} />
+            showing =  <Img fadeIn={false} fluid={this.state.secondImage} />
         }
         
         return (
-            <div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} >
+            <span onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} >
                 {showing}
-            </div>
+            </span>
         );
     }
 }
