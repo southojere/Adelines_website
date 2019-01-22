@@ -1,19 +1,32 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+
+const styleP = {
+  color:'#f59bb0'
+};
+
+const titleStyle = {
+  color:'rgb(255, 195, 62)',
+  fontWeight:'normal'
+};
+
 
 export default function Template({ data }) {
   const project = data.markdownRemark
 
   return (
-    <div>
-      <Link>Go back</Link>
-      <h1>{project.frontmatter.title}</h1>
-      <p>{project.frontmatter.smallDesc}</p>
-      <h4>{project.frontmatter.subDesc}</h4>
+    <Layout>
+      {/* <Link to="">Go back</Link> */}
+      <div className="blurbContainer">
+        <h1 style={titleStyle}><u>{project.frontmatter.title}</u></h1>
+        <p style= {styleP}><b>{project.frontmatter.smallDesc}</b></p>
+        <p style={styleP}>{project.frontmatter.subDesc}</p>
+        <div style={styleP} dangerouslySetInnerHTML={{ __html: project.html }} />
+      </div>
       <Img fluid={project.frontmatter.image.childImageSharp.fluid} />
-      <div dangerouslySetInnerHTML={{ __html: project.html }} />
-    </div>
+    </Layout>
   )
 }
 

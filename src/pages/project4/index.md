@@ -1,6 +1,6 @@
 ---
 path: "/sharedplates"
-title: "Shared Plates"
+title: "Shared Plates Exhibition and Identity"
 smallDesc: "A collaborative pop-up exhibition with Rosamund Chen, Michelle Suen, Kira Sampurno, Portia Beacham, and Holly Smith"
 subDesc: "This piece was exhibited in Asian Aotearoa Arts Huí 2018 (AAAhui2018) @ The Engine Room"
 image: 'shared.png'

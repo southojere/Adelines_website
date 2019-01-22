@@ -6,6 +6,7 @@ import Leftnav from '../components/leftnav'
 import Project from '../components/project'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Link } from '@reach/router';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -17,12 +18,8 @@ const IndexPage = ({ data }) => (
     {
       <div className="imageRow">
         {data.allMarkdownRemark.edges.map(proj => {
-          // let imageUrl = "../images/"+proj.node.frontmatter.imageOne;
-          // console.log(require(imageUrl));
-          console.log(proj.node.frontmatter.image.childImageSharp.fluid)
           return (
-            // <Img key = {proj.node.id} fluid={'../images/typo1.png'} />
-
+            <Link to= {proj.node.frontmatter.path}>
             <Project
               key={proj.node.id}
               name="Import/Export"
@@ -30,7 +27,7 @@ const IndexPage = ({ data }) => (
                 proj.node.frontmatter.image.childImageSharp.fluid,
                 proj.node.frontmatter.image2.childImageSharp.fluid,
               ]}
-            />
+            /></Link>
           )
         })}
       </div>
