@@ -1,10 +1,10 @@
 ---
-path: "/thetenlettersproject"
-title: "The 10 Letter Project"
-smallDesc: "A collaborative project with Jason Lin. "
-subDesc: "This piece was exhibited in Asian Aotearoa Arts Huí 2018 (AAAhui2018) @ The Engine Room"
-image: 'letter1.png'
-image2: 'letter2.png'
+path: "/AngPao"
+title: "Ang Pao"
+smallDesc: "ginger "
+subDesc: "ginger"
+image: 'newyears1.png'
+image2: 'newyears2.png'
 ---
 
 This project demonstrates the friendship shared between two people despite in cities on opposite ends of the planet. 

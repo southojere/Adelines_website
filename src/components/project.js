@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Img from 'gatsby-image';
 
 class Project extends Component {
     currentlyShowing; //image for thumbnail
@@ -30,15 +31,18 @@ class Project extends Component {
     }
 
     render() {
+        let showing = [];
         if (this.state.isHovering) {
             this.currentlyShowing = this.secondImage;
+            showing = <Img fluid={this.state.firstImage} />
         } else {
             this.currentlyShowing = this.firstImage;
+            showing =  <Img fluid={this.state.secondImage} />
         }
-
+        
         return (
-            <div>
-                <img  src={this.currentlyShowing} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
+            <div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} >
+                {showing}
             </div>
         );
     }

@@ -3,8 +3,8 @@ path: "/importexport"
 title: "Import/Export"
 smallDesc: "A collaborative project with Rosamund Chen."
 subDesc: "The IMPORT/EXPORT zine was exhibited in our Shared Plates Exhibition."
-imageOne: 'typo'
-imageTwo: 'typo'
+image: 'importexport1.png'
+image2: 'importexport2.png'
 ---
 
 Ro grew up in Singapore where Asian snacks could be found at every corner of the block. Adeline grew up in New Zealand where Asian snacks were quite limited, so she only ate them every now and then. When Ro and Adeline met, Asian snacks were one of the things that helped them connect to one another. 
