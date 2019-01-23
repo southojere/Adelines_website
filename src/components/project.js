@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import Img from 'gatsby-image';
 
 class Project extends Component {
-    currentlyShowing; //image for thumbnail
     firstImage;
     secondImage;
-    constructor(props){
+    constructor(props) {
         super(props)
         this.handleMouseHover = this.handleMouseHover.bind(this);
         this.state = {
             isHovering: false,
-            name:this.props.name,
+            name: this.props.name,
             firstImage: this.props.images[0],
             secondImage: this.props.images[1],
         };
-        
-        this.currentlyShowing = this.state.firstImage;
+
         this.firstImage = this.state.firstImage;
+        console.log('First image')
+        console.log(this.firstImage)
         this.secondImage = this.state.secondImage;
+        console.log('secondImage image')
+        console.log(this.secondImage)
     }
 
     handleMouseHover() {
@@ -31,19 +33,15 @@ class Project extends Component {
     }
 
     render() {
-        let showing = [];
-        if (this.state.isHovering) {
-            this.currentlyShowing = this.secondImage;
-            showing = <Img fadeIn={false} fluid={this.state.firstImage} />
+        let showing;
+        if (!this.state.isHovering) {
+            showing =  < img src={this.firstImage} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
         } else {
-            this.currentlyShowing = this.firstImage;
-            showing =  <Img fadeIn={false} fluid={this.state.secondImage} />
+            showing =  < img src={this.secondImage} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
         }
-        
+
         return (
-            <span onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} >
-                {showing}
-            </span>
+            showing
         );
     }
 }

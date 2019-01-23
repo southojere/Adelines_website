@@ -8,26 +8,30 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Link } from '@reach/router';
 
+const images = require.context('../images', true);
 const IndexPage = ({ data }) => (
   <Layout>
     <Bio />
     <Leftnav />
-    <h5 style={{ textAlign: 'center', color: '#ffc33e' }}>
+    <h5 style={{ textAlign: 'left', color: '#ffc33e',fontSize: '50px',fontWeight: 'normal', marginBottom:'66px'}}>
       <u>Selected works</u>
     </h5>
     {
       <div className="imageRow">
         {data.allMarkdownRemark.edges.map(proj => {
+          const nameOfImageOne = proj.node.frontmatter.test; 
+          const nameOfImageTwo = proj.node.frontmatter.test2; 
+          let imagesrc = images(`./${nameOfImageOne}`); //should return name of image
+          let imagesrc2 = images(`./${nameOfImageTwo}`); //should return name of image
           return (
+            <div>
             <Link to= {proj.node.frontmatter.path}>
             <Project
               key={proj.node.id}
               name="Import/Export"
-              images={[
-                proj.node.frontmatter.image.childImageSharp.fluid,
-                proj.node.frontmatter.image2.childImageSharp.fluid,
-              ]}
-            /></Link>
+              images={[imagesrc,imagesrc2]} />
+            </Link>
+            </div>
           )
         })}
       </div>
@@ -51,26 +55,8 @@ export const projectQuery = graphql`
           frontmatter {
             path
             title
-            image {
-              childImageSharp {
-                resize(width: 1500, height: 1500) {
-                  src
-                }
-                fluid(maxWidth: 786) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            image2 {
-              childImageSharp {
-                resize(width: 1500, height: 1500) {
-                  src
-                }
-                fluid(maxWidth: 786) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            test
+            test2
           }
         }
       }

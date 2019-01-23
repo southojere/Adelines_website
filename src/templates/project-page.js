@@ -15,7 +15,11 @@ const titleStyle = {
 
 export default function Template({ data }) {
   const project = data.markdownRemark
-
+  // const projectImages = [];
+  // projectImages.push(<Img fluid={project.frontmatter.image.childImageSharp.fluid} />);
+  // if(project.frontmatter.image2) {
+  //   projectImages.push(<Img fluid={project.frontmatter.image2.childImageSharp.fluid} />);
+  // }
   return (
     <Layout>
       {/* <Link to="">Go back</Link> */}
@@ -25,10 +29,9 @@ export default function Template({ data }) {
         <p style={styleP}>{project.frontmatter.subDesc}</p>
         <div style={styleP} dangerouslySetInnerHTML={{ __html: project.html }} />
       </div>
-      <div className="imageContainer">
-        <Img fluid={project.frontmatter.image.childImageSharp.fluid} />
-        <Img fluid={project.frontmatter.image2.childImageSharp.fluid} />
-      </div>
+      {/* <div className="imageContainer">
+        {projectImages}
+      </div> */}
     </Layout>
   )
 }
@@ -42,26 +45,7 @@ export const projectQuery = graphql`
         title
         subDesc
         smallDesc
-        image {
-          childImageSharp {
-            resize(width: 1500, height: 1500) {
-              src
-            }
-            fluid(maxWidth: 786) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image2 {
-          childImageSharp {
-            resize(width: 1500, height: 1500) {
-              src
-            }
-            fluid(maxWidth: 786) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        test
       }
     }
   }
