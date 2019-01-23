@@ -55,6 +55,12 @@
       width: 50%;
   }
 
+  .imageContainer{
+      width: 50%;
+      text-align: right;
+      float: right;
+  }
+
 
 @media  (max-width: 767px) {
     .nav{
@@ -70,4 +76,10 @@
       .blurbContainer{
           width: 100%
       }
+      .imageContainer{
+        width: 100%;
+        text-align: right;
+        float: right;
+    }
+  
   }

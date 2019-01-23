@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
         >
           {children}
           <footer>
-            © {new Date().getFullYear()}, Built by
+            © {new Date().getFullYear()}, Made by
             {` `}
             <a href="https://www.jeremysouthon.com">Jeremy Southon</a>
           </footer>

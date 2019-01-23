@@ -25,7 +25,10 @@ export default function Template({ data }) {
         <p style={styleP}>{project.frontmatter.subDesc}</p>
         <div style={styleP} dangerouslySetInnerHTML={{ __html: project.html }} />
       </div>
-      <Img fluid={project.frontmatter.image.childImageSharp.fluid} />
+      <div className="imageContainer">
+        <Img fluid={project.frontmatter.image.childImageSharp.fluid} />
+        <Img fluid={project.frontmatter.image2.childImageSharp.fluid} />
+      </div>
     </Layout>
   )
 }
@@ -40,6 +43,16 @@ export const projectQuery = graphql`
         subDesc
         smallDesc
         image {
+          childImageSharp {
+            resize(width: 1500, height: 1500) {
+              src
+            }
+            fluid(maxWidth: 786) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image2 {
           childImageSharp {
             resize(width: 1500, height: 1500) {
               src
