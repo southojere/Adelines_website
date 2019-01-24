@@ -38,13 +38,15 @@ export default function Template({ data }) {
       {/* <div className="imageContainer">
         {projectImages}
       </div> */}
+      <div className="imageContainer">
       {
         imageNameList.map(imagename => {
           return (
-            <img className="imageContainer" src={images(`./${imagename}`)}/>
+            <img src={images(`./${imagename}`)}/>
           )
         })
       }
+      </div>
     </Layout>
   )
 }
