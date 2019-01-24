@@ -7,5 +7,5 @@ image: 'ginger.png'
 image2: ''
 test: 'ginger.png'
 test2: 'ginger.png'
-projectImages: 'importexport1.png,importexport2.png'
+projectImages: 'ginger.png,importexport2.png'
 ---

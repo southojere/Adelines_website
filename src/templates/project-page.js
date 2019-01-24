@@ -12,6 +12,7 @@ const titleStyle = {
   fontWeight:'normal'
 };
 
+const images = require.context('../images', true);
 
 export default function Template({ data }) {
   const project = data.markdownRemark
@@ -20,6 +21,11 @@ export default function Template({ data }) {
   // if(project.frontmatter.image2) {
   //   projectImages.push(<Img fluid={project.frontmatter.image2.childImageSharp.fluid} />);
   // }
+  const markdw = project.frontmatter;
+  const imageListResult = markdw.projectImages;
+  //now need to parse into list based on ,
+  const imageNameList = imageListResult.split(',');
+  console.log(imageNameList);
   return (
     <Layout>
       {/* <Link to="">Go back</Link> */}
@@ -32,6 +38,13 @@ export default function Template({ data }) {
       {/* <div className="imageContainer">
         {projectImages}
       </div> */}
+      {
+        imageNameList.map(imagename => {
+          return (
+            <img className="imageContainer" src={images(`./${imagename}`)}/>
+          )
+        })
+      }
     </Layout>
   )
 }
@@ -46,6 +59,8 @@ export const projectQuery = graphql`
         subDesc
         smallDesc
         test
+        test2
+        projectImages
       }
     }
   }

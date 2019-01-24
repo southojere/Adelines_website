@@ -7,6 +7,7 @@ image: 'letter1.png'
 image2: 'letter2.png'
 test: 'letter1.png'
 test2: 'letter2.png'
+projectImages: 'letter1.png,letter2.png'
 ---
 
 This project demonstrates the friendship shared between two people despite in cities on opposite ends of the planet. 
