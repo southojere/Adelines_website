@@ -7,7 +7,7 @@ image: 'shared.png'
 image2: 'shared2.png'
 test: 'shared.png'
 test2: 'shared2.png'
-projectImages: 'shared.png,shared2.png,shared3.png,shared4.png,shared5.png,shared6.png'
+projectImages: 'shared.png,shared2.png,shared5.png,shared6.png,shared4.png'
 ---
 Presented in the form of a dining table setting, ‘Shared Plates’ showcases notions of food in relation to identity, nostalgia, the “everyday”, and cross-cultural exchange. Originating from different backgrounds, the exhibiting artists have, thus far, developed ongoing conversations between themselves around their individual experiences and viewpoints of growing up in different cultures. 
 
