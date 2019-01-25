@@ -16,19 +16,13 @@ const images = require.context('../images', true);
 
 export default function Template({ data }) {
   const project = data.markdownRemark
-  // const projectImages = [];
-  // projectImages.push(<Img fluid={project.frontmatter.image.childImageSharp.fluid} />);
-  // if(project.frontmatter.image2) {
-  //   projectImages.push(<Img fluid={project.frontmatter.image2.childImageSharp.fluid} />);
-  // }
   const markdw = project.frontmatter;
-  const imageListResult = markdw.projectImages;
+  const imageListResult = markdw.projectImages; // getting images
+
   //now need to parse into list based on ,
   const imageNameList = imageListResult.split(',');
-  console.log(imageNameList);
   return (
     <Layout>
-      {/* <Link to="">Go back</Link> */}
       <div className="blurbContainer">
         <h1 style={titleStyle}><u>{project.frontmatter.title}</u></h1>
         <p style= {styleP}><b>{project.frontmatter.smallDesc}</b></p>
@@ -42,7 +36,7 @@ export default function Template({ data }) {
       {
         imageNameList.map(imagename => {
           return (
-            <img src={images(`./${imagename}`)}/>
+            <img key= {imagename} src={images(`./${imagename}`)}/>
           )
         })
       }

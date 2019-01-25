@@ -15,11 +15,7 @@ class Project extends Component {
         };
 
         this.firstImage = this.state.firstImage;
-        console.log('First image')
-        console.log(this.firstImage)
         this.secondImage = this.state.secondImage;
-        console.log('secondImage image')
-        console.log(this.secondImage)
     }
 
     handleMouseHover() {

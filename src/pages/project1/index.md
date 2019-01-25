@@ -3,8 +3,6 @@ path: "/importexportold"
 title: "Import/Export"
 smallDesc: "A collaborative project with Rosamund Chen."
 subDesc: "The IMPORT/EXPORT zine was exhibited in our Shared Plates Exhibition."
-image: 'importexport1.png'
-image2: 'importexport2.png'
 test: 'importexport1.png'
 test2: 'importexport2.png'
 projectImages: 'importexport1.png,importexport2.png'

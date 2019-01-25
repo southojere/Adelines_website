@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
+import  ScrollToTop  from 'react-scroll-up'
 import Header from './header'
+import Leftnav from '../components/leftnav'
+import Rightnav from '../components/rightnav'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -19,6 +21,8 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Leftnav/>
+        <Rightnav/>
         <div
           style={{
             margin: `0 auto`,
@@ -32,6 +36,11 @@ const Layout = ({ children }) => (
             © {new Date().getFullYear()}, Made by
             {` `}
             <a href="https://www.jeremysouthon.com">Jeremy Southon</a>
+            <div className="scrollUp">
+              <ScrollToTop showUnder={160} easing='easeInOutQuad' duration={1000}>
+                <span style={{fontSize:'26px', color:'#f59bb1'}}>↑</span>
+              </ScrollToTop>
+            </div>
           </footer>
         </div>
       </>

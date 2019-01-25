@@ -3,8 +3,6 @@ path: "/AngPao"
 title: "Ang Pao"
 smallDesc: "ginger "
 subDesc: "ginger"
-image: 'newyears1.png'
-image2: 'newyears2.png'
 test: 'newyears1.png'
 test2: 'newyears2.png'
 projectImages: 'newyears1.png,newyears2.png'
