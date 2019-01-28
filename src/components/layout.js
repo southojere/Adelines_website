@@ -33,13 +33,16 @@ const Layout = ({ children }) => (
         >
           {children}
           <footer>
-            © {new Date().getFullYear()}, Made by
+            {/* © {new Date().getFullYear()}, Made by
             {` `}
-            <a href="https://www.jeremysouthon.com">Jeremy Southon</a>
+            <a href="https://www.jeremysouthon.com">Jeremy Southon</a> */}
             <div className="scrollUp">
               <ScrollToTop showUnder={160} easing='easeInOutQuad' duration={1000}>
                 <span style={{fontSize:'26px', color:'#f59bb1'}}>↑</span>
               </ScrollToTop>
+            </div>
+            <div className="cat">
+              <img src={require("../images/cat-right-gif.gif")} />
             </div>
           </footer>
         </div>

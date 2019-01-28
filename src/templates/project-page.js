@@ -7,6 +7,11 @@ const styleP = {
   color:'#f59bb0'
 };
 
+const mainPara = {
+  marginBottom: '12%',
+  color:'#f59bb0'
+}
+
 const titleStyle = {
   color:'rgb(255, 195, 62)',
   fontWeight:'normal'
@@ -27,7 +32,7 @@ export default function Template({ data }) {
         <h1 style={titleStyle}><u>{project.frontmatter.title}</u></h1>
         <p style= {styleP}><b>{project.frontmatter.smallDesc}</b></p>
         <p style={styleP}>{project.frontmatter.subDesc}</p>
-        <div style={styleP} dangerouslySetInnerHTML={{ __html: project.html }} />
+        <div style={mainPara} dangerouslySetInnerHTML={{ __html: project.html }} />
       </div>
       {/* <div className="imageContainer">
         {projectImages}

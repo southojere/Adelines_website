@@ -11,9 +11,6 @@ class Leftnav extends Component {
         return (
             <div className = "nav">
                  <p className="navItem spacing"><u>About Me</u></p>
-                 {
-                     console.log(this.props.location)
-                 }
                 <p className="navItem"><u>Projects</u></p>
             </div>
         );
