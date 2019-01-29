@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import  ScrollToTop  from 'react-scroll-up'
+import ScrollToTop from 'react-scroll-up'
 import Header from './header'
 import Leftnav from '../components/leftnav'
 import Rightnav from '../components/rightnav'
@@ -21,8 +21,10 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Leftnav/>
-        <Rightnav/>
+        <ScrollToTop showUnder={160} duration={9000000}>
+          <Leftnav />
+          <Rightnav />
+        </ScrollToTop>
         <div
           style={{
             margin: `0 auto`,
@@ -37,12 +39,16 @@ const Layout = ({ children }) => (
             {` `}
             <a href="https://www.jeremysouthon.com">Jeremy Southon</a> */}
             <div className="scrollUp">
-              <ScrollToTop showUnder={160} easing='easeInOutQuad' duration={1000}>
-                <span style={{fontSize:'26px', color:'#f59bb1'}}>↑</span>
+              <ScrollToTop
+                showUnder={160}
+                easing="easeInOutQuad"
+                duration={1000}
+              >
+                <span style={{ fontSize: '26px', color: '#f59bb1' }}>↑</span>
               </ScrollToTop>
             </div>
             <div className="cat">
-              <img src={require("../images/cat-right-gif.gif")} />
+              <img src={require('../images/cat-right-gif.gif')} />
             </div>
           </footer>
         </div>

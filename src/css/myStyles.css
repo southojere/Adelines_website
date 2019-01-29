@@ -106,7 +106,6 @@ html, body {
   animation: cat-walk 18s ease-in both infinite;
   width: 40px;
   position: relative;
-
 }
 
 @keyframes cat-walk {
