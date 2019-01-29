@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => (
             <div key={proj.node.id}>
               <Link to={proj.node.frontmatter.path}>
                 <Project
-                  name="Import/Export"
+                  name={proj.node.frontmatter.title}
                   images={[imagesrc, imagesrc2]}
                 />
               </Link>

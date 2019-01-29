@@ -28,9 +28,9 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <div className="infoContainer">
-          <span style={{textDecoration:'underline',float:'right', color:'#f59bb1'}}>Say Hello!</span>
+          <span style={{textDecoration:'underline',float:'right', color:'#f59bb1',fontWeight:'bold'}}>Say hello!</span>
           <br/>
-          <span style={{float:'right', color:'#f59bb1'}}>adeline.ang1@hotmail.com</span>
+          <span style={{float:'right', color:'#f59bb1', fontWeight:'bold'}}>adeline.ang1@hotmail.com</span>
       </div>
       <hr style={{
       marginTop:'40px',

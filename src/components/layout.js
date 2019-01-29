@@ -21,8 +21,10 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Leftnav/>
-        <Rightnav/>
+        <ScrollToTop showUnder={160} duration={9000000}> {/*quick fix*/}
+          <Leftnav/>
+          <Rightnav/>
+        </ScrollToTop>
         <div
           style={{
             margin: `0 auto`,

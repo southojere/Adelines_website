@@ -55,6 +55,10 @@ body {
   margin-right: 25px;
 }
 
+.nav-right a, .nav a {
+  color: var(--pinku-colour);
+
+}
 
 
 .infoContainer {

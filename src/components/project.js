@@ -35,7 +35,7 @@ class Project extends Component {
         } else {
             showing =  < img src={this.secondImage} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
         }
-
+        
         return (
             showing
         );
