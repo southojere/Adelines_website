@@ -4,6 +4,13 @@ body {
   --yellow-color:#ffc33e;
 }
 
+/* to stop horizontal overflow from cat */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 .bio {
   color: var(--pinku-colour);
   font-size: 40px;
@@ -97,6 +104,21 @@ body {
   width: 50%;
   text-align: right;
   float: right;
+}
+
+.cat {
+  animation: cat-walk 18s ease-in both infinite;
+  width: 40px;
+  position: relative;
+}
+
+@keyframes cat-walk {
+  0%{
+    left: -10vw
+  }
+  100%{
+    left: 110vw;
+  }
 }
 
 @media (max-width: 767px) {
