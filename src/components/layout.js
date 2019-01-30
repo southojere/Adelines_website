@@ -5,6 +5,7 @@ import ScrollToTop from 'react-scroll-up'
 import Header from './header'
 import Leftnav from '../components/leftnav'
 import Rightnav from '../components/rightnav'
+import Hamburger from '../components/hamburger'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -25,6 +26,7 @@ const Layout = ({ children }) => (
           <Leftnav/>
           <Rightnav/>
         </ScrollToTop>
+      <Hamburger open={true}/>
         <div
           style={{
             margin: `0 auto`,
