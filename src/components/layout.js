@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
           <Leftnav/>
           <Rightnav/>
         </ScrollToTop>
-      <Hamburger open={true}/>
+      {/* <Hamburger open={true}/> */}
         <div
           style={{
             margin: `0 auto`,

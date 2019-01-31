@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
           let imagesrc2 = images(`./${nameOfImageTwo}`) //should return name of image
           return (
             <div key={proj.node.id}>
-              <Link to={proj.node.frontmatter.path}>
+              <Link to={proj.node.frontmatter.path} style= {{textDecoration:'none'}}>
                 <Project
                   name={proj.node.frontmatter.title}
                   images={[imagesrc, imagesrc2]}
