@@ -7,6 +7,8 @@ import Project from '../components/project'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Link } from '@reach/router'
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const SelectedWorksStyle = {
   textAlign: 'left',
@@ -20,7 +22,6 @@ const images = require.context('../images', true)
 const IndexPage = ({ data }) => (
   <Layout>
     <Bio />
-    {/* <Leftnav /> */}
     <h5 style={SelectedWorksStyle}>
       <u>Selected works</u>
     </h5>
@@ -34,12 +35,14 @@ const IndexPage = ({ data }) => (
           let imagesrc2 = images(`./${nameOfImageTwo}`) //should return name of image
           return (
             <div key={proj.node.id}>
+            <ScrollAnimation animateIn="fadeIn">
               <Link to={proj.node.frontmatter.path} style= {{textDecoration:'none'}}>
                 <Project
                   name={proj.node.frontmatter.title}
                   images={[imagesrc, imagesrc2]}
                 />
               </Link>
+              </ScrollAnimation>
             </div>
           )
         })}
