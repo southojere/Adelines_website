@@ -2,7 +2,7 @@
 import { store } from 'react-easy-state'
 
 const filterStore = store({
-    filter: 'print',
+    filter: '',
     changeFilter(newFilter) {
         filterStore.filter = newFilter
     }

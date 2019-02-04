@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from '@reach/router'
+import { view, store } from 'react-easy-state'
 
 class Project extends Component {
   firstImage
@@ -39,7 +40,9 @@ class Project extends Component {
             onMouseEnter={this.handleMouseHover}
             onMouseLeave={this.handleMouseHover}
           />
-          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#f59bb0' }}>{this.props.name}</p>
+          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#f59bb0' }}>
+            {this.props.name}
+          </p>
         </div>
       )
     } else {
@@ -50,20 +53,23 @@ class Project extends Component {
             onMouseEnter={this.handleMouseHover}
             onMouseLeave={this.handleMouseHover}
           />
-          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#ffc33e' }}>{this.props.name}</p>
+          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#ffc33e' }}>
+            {this.props.name}
+          </p>
         </div>
       )
     }
 
-    return <div>
-      
-      <ScrollAnimation animateIn="fadeIn">
-          <Link to={this.props.link} style= {{textDecoration:'none'}}>
-           {showing}
+    return (
+      <div>
+        <ScrollAnimation animateIn="fadeIn">
+          <Link to={this.props.link} style={{ textDecoration: 'none' }}>
+            {showing}
           </Link>
-      </ScrollAnimation>
-    </div>
+        </ScrollAnimation>
+      </div>
+    )
   }
 }
 
-export default Project
+export default view(Project)

@@ -2,14 +2,12 @@ import React from 'react'
 // import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Bio from '../components/bio'
-import Leftnav from '../components/leftnav'
-import Project from '../components/project'
 import ProjectSection from '../components/projectsection'
+import FilterTagMenu from '../components/filtertagmenu'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { Link } from '@reach/router'
-import "animate.css/animate.min.css";
+import 'animate.css/animate.min.css'
 import filterStore from '../store/store'
+import { view } from 'react-easy-state'
 
 const SelectedWorksStyle = {
   textAlign: 'left',
@@ -26,8 +24,8 @@ const IndexPage = ({ data }) => (
     <h5 style={SelectedWorksStyle}>
       <u>Selected works</u>
     </h5>
-    {filterStore.changeFilter('branding')}
-    <ProjectSection></ProjectSection>
+    <FilterTagMenu store={filterStore} />
+    <ProjectSection projectFilter={filterStore.filter} store={filterStore} />
   </Layout>
 )
 
@@ -50,4 +48,4 @@ export const projectQuery = graphql`
   }
 `
 
-export default IndexPage
+export default view(IndexPage)
