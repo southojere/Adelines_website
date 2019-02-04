@@ -15,7 +15,7 @@ html, body {
   color: var(--pinku-colour);
   font-size: 40px;
   line-height: var(--main-header-size);
-  margin-bottom: 5em;
+  display: inline;
 }
 
 * {
