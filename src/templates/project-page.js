@@ -34,9 +34,6 @@ export default function Template({ data }) {
         <p style={styleP}>{project.frontmatter.subDesc}</p>
         <div style={mainPara} dangerouslySetInnerHTML={{ __html: project.html }} />
       </div>
-      {/* <div className="imageContainer">
-        {projectImages}
-      </div> */}
       <div className="imageContainer">
       {
         imageNameList.map(imagename => {

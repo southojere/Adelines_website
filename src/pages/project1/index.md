@@ -1,5 +1,6 @@
 ---
 path: "/importexportold"
+filters: 'branding,print'
 title: "Import/Export"
 smallDesc: "A collaborative project with Rosamund Chen."
 subDesc: "The IMPORT/EXPORT zine was exhibited in our Shared Plates Exhibition."

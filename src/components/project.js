@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
+import ScrollAnimation from 'react-animate-on-scroll';
+import { Link } from '@reach/router'
 
 class Project extends Component {
   firstImage
@@ -9,7 +11,6 @@ class Project extends Component {
     this.handleMouseHover = this.handleMouseHover.bind(this)
     this.state = {
       isHovering: false,
-      name: this.props.name,
       firstImage: this.props.images[0],
       secondImage: this.props.images[1],
     }
@@ -38,7 +39,7 @@ class Project extends Component {
             onMouseEnter={this.handleMouseHover}
             onMouseLeave={this.handleMouseHover}
           />
-          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#f59bb0' }}>{this.state.name}</p>
+          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#f59bb0' }}>{this.props.name}</p>
         </div>
       )
     } else {
@@ -49,12 +50,19 @@ class Project extends Component {
             onMouseEnter={this.handleMouseHover}
             onMouseLeave={this.handleMouseHover}
           />
-          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#ffc33e' }}>{this.state.name}</p>
+          <p style={{ fontSize: '39px', lineHeight: '50px', color: '#ffc33e' }}>{this.props.name}</p>
         </div>
       )
     }
 
-    return showing
+    return <div>
+      
+      <ScrollAnimation animateIn="fadeIn">
+          <Link to={this.props.link} style= {{textDecoration:'none'}}>
+           {showing}
+          </Link>
+      </ScrollAnimation>
+    </div>
   }
 }
 

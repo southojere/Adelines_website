@@ -1,5 +1,6 @@
 ---
 path: "/thetenlettersproject"
+filters: 'print'
 title: "The 10 Letter Project"
 smallDesc: "A collaborative project with Jason Lin. "
 subDesc: "This piece was exhibited in Asian Aotearoa Arts Huí 2018 (AAAhui2018) @ The Engine Room"

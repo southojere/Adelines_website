@@ -4,11 +4,12 @@ import Layout from '../components/layout'
 import Bio from '../components/bio'
 import Leftnav from '../components/leftnav'
 import Project from '../components/project'
+import ProjectSection from '../components/projectsection'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Link } from '@reach/router'
 import "animate.css/animate.min.css";
-import ScrollAnimation from 'react-animate-on-scroll';
+import filterStore from '../store/store'
 
 const SelectedWorksStyle = {
   textAlign: 'left',
@@ -25,29 +26,8 @@ const IndexPage = ({ data }) => (
     <h5 style={SelectedWorksStyle}>
       <u>Selected works</u>
     </h5>
-    {
-      <div className="imageRow">
-        {/* Go through all project and create its thumbnail on the home */}
-        {data.allMarkdownRemark.edges.map(proj => {
-          const nameOfImageOne = proj.node.frontmatter.test
-          const nameOfImageTwo = proj.node.frontmatter.test2
-          let imagesrc = images(`./${nameOfImageOne}`) //should return name of image
-          let imagesrc2 = images(`./${nameOfImageTwo}`) //should return name of image
-          return (
-            <div key={proj.node.id}>
-            <ScrollAnimation animateIn="fadeIn">
-              <Link to={proj.node.frontmatter.path} style= {{textDecoration:'none'}}>
-                <Project
-                  name={proj.node.frontmatter.title}
-                  images={[imagesrc, imagesrc2]}
-                />
-              </Link>
-              </ScrollAnimation>
-            </div>
-          )
-        })}
-      </div>
-    }
+    {filterStore.changeFilter('print')}
+    <ProjectSection></ProjectSection>
   </Layout>
 )
 
@@ -62,6 +42,7 @@ export const projectQuery = graphql`
             title
             test
             test2
+            filters
           }
         }
       }

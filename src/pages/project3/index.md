@@ -1,5 +1,6 @@
 ---
 path: "/AngPao"
+filters: 'print, illustration'
 title: "Ang Pao"
 smallDesc: "ginger "
 subDesc: "ginger"
