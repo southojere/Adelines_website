@@ -52,16 +52,7 @@ class Layout extends Component {
               paddingTop: 0,
             }}
           >
-            {/* {this.props.children}
-            {this.props.children.map( child => {
-              console.log('here')
-              console.log(child)
-              if(child && child.props.className == 'imageRow'){
-                return ({child})
-              }
-            })} */}
-
-            {this.props.children}
+           {this.props.children}
             <footer>
               {/* © {new Date().getFullYear()}, Made by
               {` `}

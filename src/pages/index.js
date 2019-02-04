@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => (
     <h5 style={SelectedWorksStyle}>
       <u>Selected works</u>
     </h5>
-    {filterStore.changeFilter('print')}
+    {filterStore.changeFilter('branding')}
     <ProjectSection></ProjectSection>
   </Layout>
 )
