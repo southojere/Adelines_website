@@ -3,15 +3,6 @@ import Typist from 'react-typist'
 import { StaticQuery, graphql } from 'gatsby'
 class Bio extends Component {
   render() {
-    let str1 = 'memorable experiences'
-    let str2 = 'meaningful connections'
-    let str3 = 'all things print'
-    let str4 = 'zines'
-    let str5 = 'bookstores'
-    let str6 = 'Japanese stationery'
-    let str7 = 'animals (especially cats)'
-    let str8 = 'flowers'
-    let str9 = 'peaches'
     return (
       <StaticQuery
         query={graphql`

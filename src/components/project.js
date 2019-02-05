@@ -62,11 +62,11 @@ class Project extends Component {
 
     return (
       <div>
-        <ScrollAnimation animateIn="fadeIn">
+        {/* <ScrollAnimation animateIn="fadeIn"> */}
           <Link to={this.props.link} style={{ textDecoration: 'none' }}>
             {showing}
           </Link>
-        </ScrollAnimation>
+        {/* </ScrollAnimation> */}
       </div>
     )
   }

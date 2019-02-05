@@ -1,14 +1,19 @@
-import React from "react";
+import React from 'react'
 
-export default ({ close }) => (
-            <div className="menu">
-            <ul>
-              <li onClick={close}>Home</li>
-              <li onClick={close}>About me</li>
-              <li onClick={close}>Projects</li>
-              <li onClick={close}>Twitter</li>
-              <li onClick={close}>Instagram</li>
-              <li onClick={close}>LinkedIn</li>
-            </ul>
-          </div>
-        );
+const handle = event => {}
+
+export default ({ close, store }) => (
+  <div className="menu">
+    <ul>
+      <li
+        onClick={() => {store.changeFilter('');close()}}>All
+      </li>
+      <li onClick={() => {store.changeFilter('print');close()}}>Print</li>
+      <li onClick={() => {store.changeFilter('editorial');close()}}>Editorial</li>
+      <li onClick={() => {store.changeFilter('branding');close()}}>Branding</li>
+      <li onClick={() => {store.changeFilter('exhibition');close()}}>Exhibition</li>
+      <li onClick={() => {store.changeFilter('illustration');close()}}>Illustration</li>
+      <li onClick={() => {store.changeFilter('book design');close()}}>Book Design</li>
+    </ul>
+  </div>
+)

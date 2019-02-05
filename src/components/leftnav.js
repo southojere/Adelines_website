@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import myStyle from '../css/myStyles.css'
 
 class Leftnav extends Component {
 
