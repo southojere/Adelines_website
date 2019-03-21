@@ -1,7 +1,7 @@
 ---
 path: "/ginger"
 filters: 'illustration'
-title: "Ginger"
+title: '"Ginger"'
 smallDesc: ""
 subDesc: "An illustration of my late cat, Ginger, created by relief printing. "
 test: 'ginger.png'
