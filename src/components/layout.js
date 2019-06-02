@@ -36,34 +36,12 @@ class Layout extends Component {
         render={data => (
           <>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <ScrollToTop showUnder={160} duration={9000000}>
-              <Leftnav />
-              <Rightnav />
-            </ScrollToTop>
-            <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: '90%',
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0,
-              }}
-            >
+            <div>
               {this.props.children}
               <footer>
-                {/* © {new Date().getFullYear()}, Made by
+                © {new Date().getFullYear()}, Made by
               {` `}
-              <a href="https://www.jeremysouthon.com">Jeremy Southon</a> */}
-                <div className="scrollUp">
-                  <ScrollToTop
-                    showUnder={160}
-                    easing="easeInOutQuad"
-                    duration={1000}
-                  >
-                    <span style={{ fontSize: '26px', color: '#f59bb1' }}>
-                      ↑
-                    </span>
-                  </ScrollToTop>
-                </div>
+              <a href="https://www.jeremysouthon.com">Jeremy Southon</a>
               </footer>
             </div>
           </>

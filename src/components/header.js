@@ -1,46 +1,65 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `white`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: '90%',
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 className ="name" style={{ margin: 0, textDecoration: 'underline' }}>
-        <Link
-          to="/"
-          style={{
-            color: '#ffc33e',
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <div className="infoContainer">
-          <span style={{textDecoration:'underline',float:'right', color:'#f59bb1',fontWeight:'bold'}}>Say hello!</span>
-          <br/>
-          <span style={{float:'right', color:'#f59bb1', fontWeight:'bold'}}>adeline.ang1@hotmail.com</span>
+const MyHeader = styled.div`
+  display:flex;
+  justify-content:space-between;
+  /* align-items:center; */
+  
+`
+
+const Name = styled.h1`
+  font-weight:normal;
+`
+const Bio = styled.h1`
+  font-weight:normal;
+`
+
+
+class Header extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {};
+
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  handleScroll() {
+    this.setState({ scroll: window.scrollY });
+  }
+
+  componentDidMount() {
+    const el = document.getElementById('header');
+    this.setState({ top: window.innerHeight/2, height: el.offsetHeight });
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentDidUpdate() {
+    this.state.scroll > this.state.top ?
+      document.body.style.paddingTop = `${this.state.height}px` :
+      document.body.style.paddingTop = 0;
+  }
+
+  render() {
+    return (
+      <div>
+        <MyHeader id="header" className={this.state.scroll > this.state.top ? "fixed-nav" : ""}>
+          <Name>
+            <Link to="/">
+              {this.props.siteTitle}
+            </Link>
+          </Name>
+          <Bio><b>Graphic designer</b> <span>enjoying a bit of</span> <span>everything</span></Bio>
+        </MyHeader>
       </div>
-      <hr style={{
-      marginTop:'40px',
-      height: '2px',
-      background: 'rgb(255, 195, 62)',
-    }} />
-    </div>
-   
-  </div>
-)
+    );
+  }
+}
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
